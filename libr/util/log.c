@@ -1,4 +1,4 @@
-/* radare - LGPL - Copyright 2007-2022 - pancake, ret2libc */
+/* radare - LGPL - Copyright 2010-2022 - pancake, ret2libc */
 
 #define R_LOG_ORIGIN "util.log"
 
@@ -169,7 +169,6 @@ R_API void r_log_del_callback(RLogCallback cb) {
 R_API void r_log(const char *funcname, const char *filename, ut32 lineno, RLogLevel level, const char *origin, const char *fmtstr, ...) {
 	va_list args;
 	va_start (args, fmtstr);
-	// r_vlog (funcname, filename, lineno, level, tag, fmtstr, args);
 	r_log_vmessage (level, origin, fmtstr, args);
 	va_end (args);
 }
